@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ACL - Ansar Camp Cricket League</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+}
+
+/* NAVBAR */
+/* NAVBAR */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    background:rgba(2,6,23,0.9);
+    backdrop-filter:blur(10px);
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* LOGO */
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px; /* spacing */
+}
+.logo{
+    text-decoration:none;
+}
+
+.logo img{
+    width:42px;
+    height:42px;
+    object-fit:contain;
+    display:block;
+}
+
+.logo h2{
+    color:#22c55e;
+    font-size:22px;
+    font-weight:600;
+    line-height:1; /* 🔥 important */
+    margin:0;
+    display:flex;
+    align-items:center;
+}
+
+/* NAV LINKS */
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:25px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-size:15px;
+    position:relative;
+    transition:0.3s;
+}
+
+/* hover underline effect */
+nav ul li a::after{
+    content:"";
+    position:absolute;
+    width:0%;
+    height:2px;
+    bottom:-5px;
+    left:0;
+    background:#22c55e;
+    transition:0.3s;
+}
+
+nav ul li a:hover::after{
+    width:100%;
+}
+
+nav ul li a:hover{
+    color:#22c55e;
+}
+
+/* HAMBURGER ICON */
+.menu-toggle{
+    display:none;
+    flex-direction:column;
+    cursor:pointer;
+}
+
+.menu-toggle span{
+    height:3px;
+    width:25px;
+    background:white;
+    margin:4px 0;
+    border-radius:2px;
+    transition:0.4s;
+}
+
+/* ANIMATION (X icon) */
+.menu-toggle.active span:nth-child(1){
+    transform:rotate(45deg) translate(5px,5px);
+}
+
+.menu-toggle.active span:nth-child(2){
+    opacity:0;
+}
+
+.menu-toggle.active span:nth-child(3){
+    transform:rotate(-45deg) translate(5px,-5px);
+}
+
+/* 🔥 MOBILE */
+@media (max-width:768px){
+
+    .menu-toggle{
+        display:flex;
+    }
+
+    nav{
+        padding:15px 20px;
+    }
+
+    nav ul{
+        position:absolute;
+        top:70px;
+        right:0;
+        width:100%;
+        background:#020617;
+        flex-direction:column;
+        align-items:center;
+        max-height:0;
+        overflow:hidden;
+        transition:max-height 0.4s ease;
+    }
+
+    nav ul.active{
+        max-height:300px;
+    }
+
+    nav ul li{
+        margin:15px 0;
+    }
+}
+
+/* HERO */
+.hero{
+    height:90vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+    /* 🔥 YOUR IMAGE BACKGROUND */
+    background: 
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+        url('./Assets/hero\ photo/heroBackground.jpg'); /* 👉 এখানে তোমার image path */
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+/* SECTION */
+section{
+    padding:60px 20px;
+    text-align:center;
+}
+
+h2{
+    margin-bottom:30px;
+    color:#22c55e;
+}
+
+/* TEAM GRID */
+/* TEAM GRID */
+.teams{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:20px;
+}
+
+/* TEAM CARD */
+.team{
+    background:#1e293b;
+    padding:15px;
+    border-radius:12px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    height:200px; /* 🔥 same height */
+    overflow:hidden; /* 🔥 bahire jabe na */
+}
+
+/* TEAM LOGO */
+.team img{
+    width:100px;  /* 🔥 fixed size */
+    height:100px;
+    object-fit:contain; /* 🔥 image cut hobe na */
+    margin-bottom:10px;
+}
+
+/* TEAM NAME */
+.team h3{
+    font-size:16px;
+    margin:0;
+}
+
+/* 🔥 Responsive */
+@media (max-width:992px){
+    .teams{
+        grid-template-columns:repeat(2, 1fr);
+    }
+}
+
+@media (max-width:500px){
+    .teams{
+        grid-template-columns:1fr;
+    }
+}
+/* 🔥 ANIMATION BASE */
+.team{
+    opacity:0;
+    transform:translateY(50px);
+    transition:all 0.6s ease;
+}
+
+/* show হলে */
+.team.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* LEFT animation */
+.team.left{
+    transform:translateX(-60px);
+}
+
+/* RIGHT animation */
+.team.right{
+    transform:translateX(60px);
+}
+
+/* UP animation */
+.team.up{
+    transform:translateY(60px);
+}
+
+/* DOWN animation */
+.team.down{
+    transform:translateY(-60px);
+}
+/* 🔥 smooth scroll */
+html{
+    scroll-behavior:smooth;
+}
+
+/* TEAM LINK */
+.team-link{
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* OVERLAY */
+.overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#22c55e;
+    font-weight:600;
+    font-size:14px;
+    border-radius:10px;
+    opacity:0;
+    transition:0.3s;
+}
+
+/* hover */
+.team-link:hover .overlay{
+    opacity:1;
+}
+
+/* SEASON TABLE */
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+table,th,td{
+    border:1px solid #334155;
+}
+
+th,td{
+    padding:10px;
+}
+
+/* FOOTER */
+footer{
+    background:#020617;
+    padding:20px;
+    text-align:center;
+}
+
+/* MODAL */
+.modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.8);
+    justify-content:center;
+    align-items:center;
+    z-index:2000;
+}
+
+.modal-content{
+    background:#1e293b;
+    padding:30px;
+    border-radius:10px;
+    width:90%;
+    max-width:500px;
+    text-align:center;
+    position:relative;
+}
+
+.close{
+    position:absolute;
+    right:20px;
+    top:10px;
+    font-size:25px;
+    cursor:pointer;
+}
+
+/* TEAM CARD hover container */
+.team{
+    position:relative; /* 🔥 important */
+    cursor:pointer;
+}
+
+/* OVERLAY */
+.team::after{
+    content:"Click Here";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#22c55e;
+    font-weight:600;
+    font-size:16px;
+    border-radius:12px;
+    opacity:0;
+    transition:0.3s;
+}
+
+/* HOVER হলে show */
+.team:hover::after{
+    opacity:1;
+}
+
+
+/* PLAYERS GRID */
+.players{
+    display:grid;
+    grid-template-columns:repeat(5, 1fr);
+    gap:15px;
+}
+
+/* PLAYER CARD */
+.player{
+    background:#1e293b;
+    padding:10px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.player:hover{
+    transform:scale(1.05);
+    background:#334155;
+}
+
+/* RESPONSIVE */
+@media (max-width:992px){
+    .players{
+        grid-template-columns:repeat(3, 1fr);
+    }
+}
+
+@media (max-width:500px){
+    .players{
+        grid-template-columns:repeat(2, 1fr);
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <a href="#home" class="logo">
+    <img src="./Assets/acl logo/remove-photos-background-removed.png" alt="ACL Logo">
+    <h2>ACL League</h2>
+</a>
+
+    <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <ul id="nav-links">
+    <li><a href="#history">History</a></li>
+    <li><a href="#teams">Teams</a></li>
+    <li><a href="#players">Players</a></li> <!-- 🔥 ADD THIS -->
+    <li><a href="#season">Seasons</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#org">Organizers</a></li>
+</ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="home">
+    <div>
+        <h1>Ansar Camp Cricket League</h1>
+        <p>Season 06 Running Now 🏏🔥</p>
+    </div>
+</div>
+
+<!-- HISTORY -->
+<!-- <section id="history">
+    <h2>ACL History</h2>
+    <p>
+        Ansar Camp Cricket League (ACL) started with passion for cricket. 
+        From small matches to a big tournament, ACL has completed 6 successful seasons.
+    </p>
+</section> -->
+<!-- HISTORY -->
+<section id="history">
+    <h2>ACL History</h2>
+
+    <p>
+        Ansar Camp Cricket League (ACL) প্রথম আয়োজন করা হয় ২০১৯ সালে। 
+        সেই সময় একটি ছোট চায়ের দোকানে বসে Bappy ভাই এবং Nayem ভাইসহ 
+        আরও অনেকেই আড্ডা দিতে দিতে নিজেদের মধ্যে একটি ক্রিকেট টুর্নামেন্ট আয়োজনের কথা ভাবেন।
+    </p>
+
+    <p>
+        চায়ের দোকানের সেই আড্ডা থেকেই দল ভাগ করা হয়, দলগুলোর নাম নির্ধারণ করা হয় 
+        এবং সেখান থেকেই শুরু হয় ACL Season 1। খুব সাধারণভাবে শুরু হলেও, 
+        এটি সবার মাঝে দারুণ আগ্রহ এবং আনন্দ সৃষ্টি করে।
+    </p>
+
+    <p>
+        এরপর ২০২১ সাল থেকে নিয়মিতভাবে ACL এর খেলা চালু হয় এবং শুরু হয় Season 2। 
+        ধীরে ধীরে এটি একটি সংগঠিত টুর্নামেন্টে রূপ নেয়।
+    </p>
+
+    <p>
+        ACL পরিচালনায় গুরুত্বপূর্ণ ভূমিকা রাখেন:
+        <br><br>
+        Bappy, Shuvo, Rasel, Mini Rasel, Alamin, Ranan, Nirjor, Johirul, Jahid
+    </p>
+
+    <p>
+        আলহামদুলিল্লাহ, সবার সহযোগিতায় ACL আজ একটি সফল ক্রিকেট লিগে পরিণত হয়েছে।
+        ভবিষ্যতে আরও বড় এবং সুন্দরভাবে ACL আয়োজন করা হবে — এই প্রত্যাশা নিয়েই আমরা এগিয়ে যাচ্ছি।
+    </p>
+
+</section>
+<!-- TEAMS -->
+<section id="teams">
+    <h2>Our Teams</h2>
+    <div class="teams">
+
+        <div class="team" onclick="openModal('Team 1')">
+            <img src="./Assets/team logo/Screenshot (1).png">
+            <h3>Team 1</h3>
+        </div>
+
+        <div class="team" onclick="openModal('Team 2')">
+            <img src="./Assets/team logo/Screenshot (2).png">
+            <h3>Team 2</h3>
+        </div>
+
+        <div class="team" onclick="openModal('Team 3')">
+            <img src="./Assets/team logo/Screenshot (3).png">
+            <h3>Team 3</h3>
+        </div>
+
+        <div class="team" onclick="openModal('Team 4')">
+            <img src="./Assets/team logo/Screenshot (4).png">
+            <h3>Team 4</h3>
+        </div>
+
+        <div class="team" onclick="openModal('Team 5')">
+            <img src="./Assets/team logo/Screenshot (5).png">
+            <h3>Team 5</h3>
+        </div>
+
+        <div class="team" onclick="openModal('Team 6')">
+            <img src="./Assets/team logo/Screenshot (6).png">
+            <h3>Team 6</h3>
+        </div>
+
+        <div class="team" onclick="openModal('Team 7')">
+            <img src="./Assets/team logo/Screenshot (7).png">
+            <h3>Team 7</h3>
+        </div>
+
+        <div class="team" onclick="openModal('Team 8')">
+            <img src="./Assets/team logo/Screenshot (8).png">
+            <h3>Team 8</h3>
+        </div>
+
+    </div>
+</section>
+
+<!-- PLAYER DETAILS -->
+<section id="players">
+    <h2>Player Details</h2>
+
+    <div class="players" id="playersContainer">
+        <!-- JS দিয়ে auto generate হবে -->
+    </div>
+</section>
+
+<!-- SEASON -->
+<section id="season">
+    <h2>Season Results</h2>
+
+    <table>
+        <tr>
+            <th>Season</th>
+            <th>Winner</th>
+            <th>Runner Up</th>
+        </tr>
+
+        <tr>
+            <td>Season 1</td>
+            <td>Team A</td>
+            <td>Team B</td>
+        </tr>
+
+        <tr>
+            <td>Season 2</td>
+            <td>Team C</td>
+            <td>Team D</td>
+        </tr>
+
+        <tr>
+            <td>Season 3</td>
+            <td>Team E</td>
+            <td>Team F</td>
+        </tr>
+
+        <tr>
+            <td>Season 4</td>
+            <td>Team G</td>
+            <td>Team H</td>
+        </tr>
+
+        <tr>
+            <td>Season 5</td>
+            <td>Team A</td>
+            <td>Team C</td>
+        </tr>
+
+        <tr>
+            <td>Season 6</td>
+            <td>Running...</td>
+            <td>-</td>
+        </tr>
+
+    </table>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+    <h2>Gallery</h2>
+    <p>Match moments & team photos coming soon...</p>
+</section>
+
+<!-- ORGANIZERS -->
+<section id="org">
+    <h2>Organizers</h2>
+    <p>Organized by ACL Committee & Members</p>
+</section>
+
+<!-- ✅ Modal ঠিকভাবে বসাও -->
+<div id="teamModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+
+        <h2 id="teamTitle"></h2>
+
+        <!-- Player Summary -->
+        <div id="playerSummary" style="margin-bottom:15px;"></div>
+
+        <table id="teamData"></table>
+    </div>
+</div>
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 ACL League | All Rights Reserved</p>
+</footer>
+
+</body>
+<!-- Navbar -->
+<script>
+const toggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+toggle.addEventListener("click", () => {
+    toggle.classList.toggle("active");
+    navLinks.classList.toggle("active");
+});
+</script>
+
+<script>
+const teams = document.querySelectorAll(".team");
+
+function showTeams(){
+    const triggerBottom = window.innerHeight * 0.85;
+
+    teams.forEach((team, index) => {
+        const boxTop = team.getBoundingClientRect().top;
+
+        if(boxTop < triggerBottom){
+            team.classList.add("show");
+        }
+    });
+}
+
+window.addEventListener("scroll", showTeams);
+window.addEventListener("load", showTeams);
+</script>
+
+<script>
+const teamInfo = {
+    "Team 1": ["Winner", "Runner Up", "Semi Final", "Group", "Winner", "Running"],
+    "Team 2": ["Group", "Group", "Runner Up", "Winner", "Semi", "Running"],
+    "Team 3": ["Semi", "Winner", "Group", "Group", "Runner Up", "Running"],
+    "Team 4": ["Group", "Semi", "Winner", "Runner Up", "Group", "Running"],
+    "Team 5": ["Runner Up", "Group", "Semi", "Winner", "Group", "Running"],
+    "Team 6": ["Group", "Winner", "Runner Up", "Semi", "Group", "Running"],
+    "Team 7": ["Semi", "Group", "Winner", "Group", "Runner Up", "Running"],
+    "Team 8": ["Group", "Semi", "Group", "Winner", "Runner Up", "Running"]
+};
+
+function openModal(teamName){
+    document.getElementById("teamModal").style.display = "flex";
+    document.getElementById("teamTitle").innerText = teamName;
+
+    let data = teamInfo[teamName];
+    let table = `
+        <tr>
+            <th>Season</th>
+            <th>Performance</th>
+        </tr>
+    `;
+
+    data.forEach((item, index) => {
+        table += `
+            <tr>
+                <td>Season ${index + 1}</td>
+                <td>${item}</td>
+            </tr>
+        `;
+    });
+
+    document.getElementById("teamData").innerHTML = table;
+}
+
+function closeModal(){
+    document.getElementById("teamModal").style.display = "none";
+}
+
+window.onclick = function(e){
+    const modal = document.getElementById("teamModal");
+    if(e.target == modal){
+        modal.style.display = "none";
+    }
+}
+
+
+
+</script>
+
+<script>
+// 🔥 120 Players Data Generate
+
+
+
+const players = [
+    {
+        name:"Naymul Islam Rana",
+        age:32,
+        match:5,
+        runs:600,
+        wickets:8,
+        img:"./Assets/players/rana.jpg" // 🔥 তোমার image path
+    },
+    {
+        name:"Sazid Hassan Rahat",
+        age:22,
+        match:5,
+        runs:450,
+        wickets:5,
+        img:"./Assets/players/rahat.jpg"
+    }
+];
+// 🔥 Show Players
+const container = document.getElementById("playersContainer");
+
+// safety check (important) 
+if(container){
+    players.forEach((p) => {
+        const div = document.createElement("div");
+        div.className = "player";
+
+        div.innerHTML = `<h4>${p.name}</h4>`;
+
+        div.addEventListener("click", () => {
+            openPlayerModal(p);
+        });
+
+        container.appendChild(div);
+    });
+}
+
+// 🔥 Player Modal Function
+function openPlayerModal(player){
+    const modal = document.getElementById("teamModal");
+    const title = document.getElementById("teamTitle");
+    const table = document.getElementById("teamData");
+    const summary = document.getElementById("playerSummary");
+
+    modal.style.display = "flex";
+
+    // Title
+    title.innerText = player.name;
+
+    // 🔥 TOP PART (Image + Info)
+    summary.innerHTML = `
+    <img src="${player.img}" 
+         style="width:140px;height:140px;border-radius:50%;object-fit:cover;margin-bottom:10px;border:3px solid #22c55e;">
+`;
+
+    // 🔥 BOTTOM TABLE
+    table.innerHTML = `
+        <tr><th>Field</th><th>Data</th></tr>
+        <tr><td>Name</td><td>${player.name}</td></tr>
+        <tr><td>Age</td><td>${player.age}</td></tr>
+        <tr><td>Match</td><td>${player.match}</td></tr>
+        <tr><td>Runs</td><td>${player.runs}</td></tr>
+        <tr><td>Wickets</td><td>${player.wickets}</td></tr>
+    `;
+}
+</script>
+</html>
