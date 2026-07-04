@@ -861,6 +861,103 @@ display:none;
 }
 
 }
+.map-btn{
+    color:#22c55e;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.map-btn:hover{
+    color:#fff;
+    text-decoration:underline;
+}
+.countdown{
+
+margin-top:40px;
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+.time-box{
+
+width:110px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(10px);
+
+border:1px solid rgba(255,255,255,.15);
+
+padding:20px 10px;
+
+border-radius:15px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.35);
+
+transition:.35s;
+
+}
+
+.time-box:hover{
+
+transform:translateY(-8px);
+
+background:#22c55e;
+
+color:#000;
+
+}
+
+.time-box h2{
+
+font-size:38px;
+
+margin-bottom:8px;
+
+color:#22c55e;
+
+}
+
+.time-box:hover h2{
+
+color:#000;
+
+}
+
+.time-box span{
+
+font-size:14px;
+
+font-weight:600;
+
+letter-spacing:1px;
+
+}
+
+@media(max-width:768px){
+
+.time-box{
+
+width:80px;
+padding:15px 8px;
+
+}
+
+.time-box h2{
+
+font-size:28px;
+
+}
+
+}
 </style>
 </head>
 
@@ -891,11 +988,36 @@ display:none;
 
 <!-- HERO -->
 <div class="hero" id="home">
-    <div>
-        <!-- <h1>Ansar Camp Cricket League</h1> -->
-         <h1><h1>TEST 123 - Ansar Camp Cricket League</h1></h1>
-        <p>Season 06 Running Now 🏏🔥</p>
+<div>
+    <h1>Ansar Camp Cricket League</h1>
+    <p>Season 07 Coming Soon 🏏🔥</p>
+
+    <!-- Countdown -->
+    <div class="countdown">
+
+        <div class="time-box">
+            <h2 id="days">00</h2>
+            <span>Days</span>
+        </div>
+
+        <div class="time-box">
+            <h2 id="hours">00</h2>
+            <span>Hours</span>
+        </div>
+
+        <div class="time-box">
+            <h2 id="minutes">00</h2>
+            <span>Minutes</span>
+        </div>
+
+        <div class="time-box">
+            <h2 id="seconds">00</h2>
+            <span>Seconds</span>
+        </div>
+
     </div>
+
+</div>
 </div>
 
 <!-- HISTORY -->
@@ -1160,7 +1282,14 @@ display:none;
 <div class="footer-contact">
     <h3>Contact</h3>
 
-    <p>📍 Ansar Camp</p>
+    <p>
+📍
+<a href="https://maps.app.goo.gl/Vk6R2hAi9bS2JpuB9"
+   target="_blank"
+   class="map-btn">
+   Ansar Camp Ground Location
+</a>
+</p>
     <p>🏏 ACL Committee</p>
     <p>📧 aclleague@example.com</p>
 
@@ -1352,4 +1481,37 @@ function openPlayerModal(player){
     `;
 }
 </script>
+<script>const targetDate = new Date("January 10, 2027 00:00:00").getTime();
+
+function countdown(){
+
+const now = new Date().getTime();
+
+const distance = targetDate - now;
+
+const days = Math.floor(distance / (1000*60*60*24));
+
+const hours = Math.floor((distance % (1000*60*60*24))/(1000*60*60));
+
+const minutes = Math.floor((distance % (1000*60*60))/(1000*60));
+
+const seconds = Math.floor((distance % (1000*60))/1000);
+
+document.getElementById("days").innerHTML=days;
+document.getElementById("hours").innerHTML=hours;
+document.getElementById("minutes").innerHTML=minutes;
+document.getElementById("seconds").innerHTML=seconds;
+
+if(distance<0){
+
+document.querySelector(".countdown").innerHTML=
+"<h2>🏆 Tournament Started!</h2>";
+
+}
+
+}
+
+countdown();
+
+setInterval(countdown,1000);</script>
 </html>
