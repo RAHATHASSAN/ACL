@@ -427,7 +427,440 @@ footer{
         grid-template-columns:repeat(2, 1fr);
     }
 }
+/* ================= FOOTER ================= */
 
+.footer{
+    background:#020617;
+    margin-top:60px;
+    padding:50px 20px 20px;
+}
+
+.footer-container{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:40px;
+}
+
+.footer-logo img{
+    width:70px;
+    margin-bottom:15px;
+}
+
+.footer-logo h2{
+    color:#22c55e;
+    margin-bottom:10px;
+}
+
+.footer-logo p{
+    color:#cbd5e1;
+    line-height:1.7;
+}
+
+.footer-links h3,
+.footer-contact h3{
+    color:#22c55e;
+    margin-bottom:18px;
+}
+
+.footer-links{
+    display:flex;
+    flex-direction:column;
+}
+
+.footer-links a{
+    color:#cbd5e1;
+    text-decoration:none;
+    margin:8px 0;
+    transition:.3s;
+}
+
+.footer-links a:hover{
+    color:#22c55e;
+    padding-left:8px;
+}
+
+.footer-contact p{
+    color:#cbd5e1;
+    margin:10px 0;
+}
+
+.footer hr{
+    margin:35px 0 20px;
+    border:none;
+    height:1px;
+    background:#334155;
+}
+
+.copyright{
+    text-align:center;
+    color:#94a3b8;
+    font-size:14px;
+}
+/* ================= ORGANIZERS ================= */
+
+.organizers{
+    padding:80px 8%;
+    background:#0f172a;
+}
+
+.organizers h2{
+    text-align:center;
+    color:#22c55e;
+    font-size:35px;
+    margin-bottom:15px;
+}
+
+.org-subtitle{
+    text-align:center;
+    color:#cbd5e1;
+    max-width:850px;
+    margin:auto;
+    line-height:1.8;
+    margin-bottom:60px;
+}
+
+.org-container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+/* LEFT */
+
+.org-left h3{
+    color:#22c55e;
+    font-size:28px;
+    margin-bottom:20px;
+}
+
+.org-left p{
+    color:#cbd5e1;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+.org-members{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.org-members span{
+
+    background:#1e293b;
+    color:white;
+
+    padding:12px 18px;
+
+    border-radius:50px;
+
+    transition:.35s;
+    cursor:pointer;
+
+    border:1px solid #334155;
+}
+
+.org-members span:hover{
+
+    background:#22c55e;
+    color:#000;
+
+    transform:translateY(-5px);
+
+}
+
+/* RIGHT */
+
+.org-gallery{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:15px;
+
+    margin-bottom:20px;
+
+}
+
+.org-gallery img{
+
+    width:100%;
+    height:180px;
+
+    object-fit:cover;
+
+    border-radius:15px;
+
+    transition:.4s;
+
+}
+
+.org-gallery img:hover{
+
+    transform:scale(1.05);
+
+}
+
+.org-right video{
+
+    width:100%;
+
+    border-radius:15px;
+
+    border:2px solid #22c55e;
+
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.org-container{
+
+grid-template-columns:1fr;
+
+}
+
+.org-gallery img{
+
+height:160px;
+
+}
+
+}
+.facebook-btn{
+
+display:inline-block;
+margin-top:15px;
+
+background:#1877F2;
+color:#fff;
+
+text-decoration:none;
+
+padding:12px 20px;
+
+border-radius:50px;
+
+font-weight:600;
+
+transition:.35s;
+
+}
+
+.facebook-btn:hover{
+
+background:#0d65d9;
+
+transform:translateY(-3px);
+
+box-shadow:0 10px 20px rgba(24,119,242,.35);
+
+}
+/*=============================
+    Messenger Floating Button
+==============================*/
+
+.messenger-chat{
+
+position:fixed;
+
+right:30px;
+bottom:30px;
+
+width:70px;
+height:70px;
+
+border-radius:50%;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:#fff;
+
+box-shadow:
+0 15px 35px rgba(0,0,0,.25);
+
+z-index:99999;
+
+transition:.35s;
+
+animation:pulse 2s infinite;
+
+text-decoration:none;
+
+}
+
+/* Hover */
+
+.messenger-chat:hover{
+
+transform:translateY(-8px) scale(1.08);
+
+box-shadow:
+0 25px 50px rgba(0,0,0,.35);
+
+}
+
+/* Icon */
+
+.messenger-chat img{
+
+width:42px;
+height:42px;
+
+}
+
+/* Online Dot */
+
+.online-dot{
+
+position:absolute;
+
+top:10px;
+right:10px;
+
+width:14px;
+height:14px;
+
+background:#22c55e;
+
+border:3px solid white;
+
+border-radius:50%;
+
+}
+
+/* Tooltip */
+
+.chat-tooltip{
+
+position:absolute;
+
+right:85px;
+
+background:#fff;
+
+color:#111827;
+
+padding:12px 18px;
+
+border-radius:12px;
+
+font-size:14px;
+
+line-height:22px;
+
+white-space:nowrap;
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.15);
+
+opacity:0;
+
+visibility:hidden;
+
+transition:.35s;
+
+}
+
+.chat-tooltip strong{
+
+color:#1877F2;
+
+}
+
+/* Arrow */
+
+.chat-tooltip::after{
+
+content:"";
+
+position:absolute;
+
+right:-8px;
+top:22px;
+
+border-left:8px solid white;
+
+border-top:8px solid transparent;
+
+border-bottom:8px solid transparent;
+
+}
+
+/* Hover */
+
+.messenger-chat:hover .chat-tooltip{
+
+opacity:1;
+
+visibility:visible;
+
+right:95px;
+
+}
+
+/* Pulse Animation */
+
+@keyframes pulse{
+
+0%{
+
+box-shadow:
+0 0 0 0 rgba(24,119,242,.45);
+
+}
+
+70%{
+
+box-shadow:
+0 0 0 18px rgba(24,119,242,0);
+
+}
+
+100%{
+
+box-shadow:
+0 0 0 0 rgba(24,119,242,0);
+
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.messenger-chat{
+
+width:60px;
+height:60px;
+
+right:18px;
+bottom:18px;
+
+}
+
+.messenger-chat img{
+
+width:36px;
+height:36px;
+
+}
+
+.chat-tooltip{
+
+display:none;
+
+}
+
+}
 </style>
 </head>
 
@@ -575,38 +1008,38 @@ footer{
 
         <tr>
             <td>Season 1</td>
-            <td>Team A</td>
-            <td>Team B</td>
+            <td>Team Black</td>
+            <td>Team Brown</td>
         </tr>
 
         <tr>
             <td>Season 2</td>
-            <td>Team C</td>
-            <td>Team D</td>
+            <td>Thunders Light</td>
+            <td>The Scoring Willows</td>
         </tr>
 
         <tr>
             <td>Season 3</td>
-            <td>Team E</td>
-            <td>Team F</td>
+            <td>Century Hitters</td>
+            <td>Thunders Ligh</td>
         </tr>
 
         <tr>
             <td>Season 4</td>
-            <td>Team G</td>
-            <td>Team H</td>
+            <td>The Scoring Willows</td>
+            <td>Thunders Ligh</td>
         </tr>
 
         <tr>
             <td>Season 5</td>
-            <td>Team A</td>
-            <td>Team C</td>
+            <td>Gladiators of Camp</td>
+            <td>Unstappable XI</td>
         </tr>
 
         <tr>
             <td>Season 6</td>
-            <td>Running...</td>
-            <td>-</td>
+            <td>Dark Warrior</td>
+            <td>Century Hitters</td>
         </tr>
 
     </table>
@@ -619,9 +1052,74 @@ footer{
 </section>
 
 <!-- ORGANIZERS -->
-<section id="org">
-    <h2>Organizers</h2>
-    <p>Organized by ACL Committee & Members</p>
+<!-- ================= ORGANIZERS ================= -->
+<section id="org" class="organizers">
+
+    <h2>ACL Organizing Committee</h2>
+
+    <p class="org-subtitle">
+        Behind every successful season of the Ansar Camp Cricket League stands a dedicated team of organizers
+        who work tirelessly to make every tournament memorable.
+    </p>
+
+    <div class="org-container">
+
+        <!-- LEFT -->
+        <div class="org-left">
+
+            <h3>Our Organizers</h3>
+
+            <p>
+                The ACL Organizing Committee is committed to planning, managing,
+                and successfully conducting every season with fairness, discipline,
+                teamwork, and passion for cricket.
+            </p>
+
+            <div class="org-members">
+
+                <span>Shajol</span>
+                <span>Arman</span>
+                <span>Roni</span>
+                <span>Niloy</span>
+                <span>Nirzhor</span>
+                <span>Jahid</span>
+                <span>Rasel</span>
+                <span>Asif</span>
+                <span>Rahat</span>
+                <span>Rana</span>
+                <span>Alamin</span>
+                <span>BP Rasel</span>
+                <span>Ibrahim</span>
+                <span>Shuvo</span>
+                <span>Saiful</span>
+                <span>Mithu</span>
+                <span>Bappy</span>
+                <span>Ratul</span>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="org-right">
+
+            <div class="org-gallery">
+
+                <img src="./Assets/organizer/1.jpg">
+                <img src="./Assets/organizer/2.jpg">
+                <img src="./Assets/organizer/3.jpg">
+                <img src="./Assets/organizer/4.jpg">
+
+            </div>
+
+            <video controls poster="./Assets/organizer/video-cover.jpg">
+                <source src="./Assets/organizer/organizer.mp4" type="video/mp4">
+            </video>
+
+        </div>
+
+    </div>
+
 </section>
 
 <!-- ✅ Modal ঠিকভাবে বসাও -->
@@ -638,9 +1136,67 @@ footer{
     </div>
 </div>
 <!-- FOOTER -->
-<footer>
-    <p>© 2026 ACL League | All Rights Reserved</p>
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-logo">
+            <img src="./Assets/acl logo/remove-photos-background-removed.png" alt="">
+            <h2>ACL League</h2>
+            <p>Ansar Camp Cricket League</p>
+        </div>
+
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+
+            <a href="#history">History</a>
+            <a href="#teams">Teams</a>
+            <a href="#players">Players</a>
+            <a href="#season">Seasons</a>
+            <a href="#gallery">Gallery</a>
+        </div>
+
+<div class="footer-contact">
+    <h3>Contact</h3>
+
+    <p>📍 Ansar Camp</p>
+    <p>🏏 ACL Committee</p>
+    <p>📧 aclleague@example.com</p>
+
+    <a href="https://www.facebook.com/profile.php?id=61555396622196"
+       target="_blank"
+       class="facebook-btn">
+        📘 Follow Our Facebook Page
+    </a>
+
+</div>
+
+    </div>
+
+    <hr>
+
+    <div class="copyright">
+        © 2026 ACL League | All Rights Reserved ❤️
+    </div>
+
 </footer>
+<!-- ================= FACEBOOK CHAT ================= -->
+
+<a href="https://www.facebook.com/profile.php?id=61555396622196"
+   target="_blank"
+   class="messenger-chat">
+
+    <div class="chat-tooltip">
+        <strong>Need Help?</strong><br>
+        Message us on Facebook
+    </div>
+
+    <div class="online-dot"></div>
+
+    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968764.png"
+         alt="Messenger">
+
+</a>
 
 </body>
 <!-- Navbar -->
