@@ -97,7 +97,7 @@
     <p> আলহামদুলিল্লাহ, আপনাদের ভালোবাসা, সহযোগিতা ও দোয়ায় আমাদের এই আয়োজন প্রতিনিয়ত আরও সমৃদ্ধ হচ্ছে। ইনশাআল্লাহ, ভবিষ্যতে আমরা আরও বড় পরিসরে, আরও সুন্দর ও আকর্ষণীয় আয়োজনের মাধ্যমে সবার জন্য একটি স্মরণীয় অভিজ্ঞতা উপহার দিতে প্রতিশ্রুতিবদ্ধ। </p> <p> <strong> আপনাদের ভালোবাসা, সমর্থন ও দোয়াই আমাদের এগিয়ে যাওয়ার অনুপ্রেরণা।<br> ধন্যবাদ। </strong> </p>
 </section>
 <!-- TEAMS -->
-<!-- <section id="teams">
+<section id="teams">
     <h2>Our Teams</h2>
     <div class="teams">
 
@@ -142,54 +142,8 @@
         </div>
 
     </div>
-</section> -->
-<section id="teams">
-    <h2>Our Teams</h2>
-
-    <div class="teams">
-
-        <div class="team" onclick="openTeam('Team 1')">
-            <img src="./Assets/team logo/Screenshot (1).png">
-            <h3>Team 1</h3>
-        </div>
-
-        <div class="team" onclick="openTeam('Team 2')">
-            <img src="./Assets/team logo/Screenshot (2).png">
-            <h3>Team 2</h3>
-        </div>
-
-        <div class="team" onclick="openTeam('Team 3')">
-            <img src="./Assets/team logo/Screenshot (3).png">
-            <h3>Team 3</h3>
-        </div>
-
-        <div class="team" onclick="openTeam('Team 4')">
-            <img src="./Assets/team logo/Screenshot (4).png">
-            <h3>Team 4</h3>
-        </div>
-
-        <div class="team" onclick="openTeam('Team 5')">
-            <img src="./Assets/team logo/Screenshot (5).png">
-            <h3>Team 5</h3>
-        </div>
-
-        <div class="team" onclick="openTeam('Team 6')">
-            <img src="./Assets/team logo/Screenshot (6).png">
-            <h3>Team 6</h3>
-        </div>
-
-        <div class="team" onclick="openTeam('Team 7')">
-            <img src="./Assets/team logo/Screenshot (7).png">
-            <h3>Team 7</h3>
-        </div>
-
-        <div class="team" onclick="openTeam('Team 8')">
-            <img src="./Assets/team logo/Screenshot (8).png">
-            <h3>Team 8</h3>
-        </div>
-
-    </div>
 </section>
+
 
 <!-- PLAYER DETAILS -->
 <section id="players">
@@ -346,7 +300,11 @@
 
         <span class="close" onclick="closeTeam()">&times;</span>
 
-        <div id="teamContent"></div>
+        <h2 id="teamTitle"></h2>
+
+        <div id="playerSummary"></div>
+
+        <table id="teamData"></table>
 
     </div>
 

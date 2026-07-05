@@ -182,89 +182,89 @@ countdown();
 
 setInterval(countdown,1000);
 
-const teamsData = {
-    "Team 1":{
-        logo:"./Assets/team logo/Screenshot (1).png",
-        champion:2,
-        runner:1,
-        batsman:{name:"Rana",runs:680},
-        bowler:{name:"Rahat",wickets:20},
-        gallery:[
-            "./Assets/team1/1.jpg",
-            "./Assets/team1/2.jpg",
-            "./Assets/team1/3.jpg"
-        ],
-        players:["Rana","Rahat","Niloy","Rasel","Jahid"]
-    },
+// const teamsData = {
+//     "Team 1":{
+//         logo:"./Assets/team logo/Screenshot (1).png",
+//         champion:2,
+//         runner:1,
+//         batsman:{name:"Rana",runs:680},
+//         bowler:{name:"Rahat",wickets:20},
+//         gallery:[
+//             "./Assets/team1/1.jpg",
+//             "./Assets/team1/2.jpg",
+//             "./Assets/team1/3.jpg"
+//         ],
+//         players:["Rana","Rahat","Niloy","Rasel","Jahid"]
+//     },
 
-    "Team 2":{
-        logo:"./Assets/team logo/Screenshot (2).png",
-        champion:1,
-        runner:2,
-        batsman:{name:"Rahat",runs:540},
-        bowler:{name:"Niloy",wickets:18},
-        gallery:[
-            "./Assets/team2/1.jpg",
-            "./Assets/team2/2.jpg"
-        ],
-        players:["Rahat","Niloy","Asif"]
-    }
-};
+//     "Team 2":{
+//         logo:"./Assets/team logo/Screenshot (2).png",
+//         champion:1,
+//         runner:2,
+//         batsman:{name:"Rahat",runs:540},
+//         bowler:{name:"Niloy",wickets:18},
+//         gallery:[
+//             "./Assets/team2/1.jpg",
+//             "./Assets/team2/2.jpg"
+//         ],
+//         players:["Rahat","Niloy","Asif"]
+//     }
+// };
 
-function openTeam(teamName){
+// function openTeam(teamName){
 
-    const team = teamsData[teamName];
+//     const team = teamsData[teamName];
 
-    document.getElementById("teamModal").style.display="flex";
+//     document.getElementById("teamModal").style.display="flex";
 
-    document.getElementById("teamContent").innerHTML=`
+//     document.getElementById("teamContent").innerHTML=`
     
-    <div class="team-header">
+//     <div class="team-header">
 
-        <img src="${team.logo}">
-        <h2>${teamName}</h2>
+//         <img src="${team.logo}">
+//         <h2>${teamName}</h2>
 
-    </div>
+//     </div>
 
-    <div class="stats">
+//     <div class="stats">
 
-        <div class="card">
-            <i class="fa-solid fa-trophy"></i>
-            <h2>${team.champion}</h2>
-            <p>Champion</p>
-        </div>
+//         <div class="card">
+//             <i class="fa-solid fa-trophy"></i>
+//             <h2>${team.champion}</h2>
+//             <p>Champion</p>
+//         </div>
 
-        <div class="card">
-            <i class="fa-solid fa-medal"></i>
-            <h2>${team.runner}</h2>
-            <p>Runner Up</p>
-        </div>
+//         <div class="card">
+//             <i class="fa-solid fa-medal"></i>
+//             <h2>${team.runner}</h2>
+//             <p>Runner Up</p>
+//         </div>
 
-        <div class="card">
-            <i class="fa-solid fa-calendar-days"></i>
-            <h2>6</h2>
-            <p>Seasons</p>
-        </div>
+//         <div class="card">
+//             <i class="fa-solid fa-calendar-days"></i>
+//             <h2>6</h2>
+//             <p>Seasons</p>
+//         </div>
 
-    </div>
+//     </div>
 
-    <h3 class="section-title">
-        <i class="fa-solid fa-baseball"></i> Best Batsman
-    </h3>
-    <p>${team.batsman.name} - ${team.batsman.runs} Runs</p>
+//     <h3 class="section-title">
+//         <i class="fa-solid fa-baseball"></i> Best Batsman
+//     </h3>
+//     <p>${team.batsman.name} - ${team.batsman.runs} Runs</p>
 
-    <h3 class="section-title">
-        <i class="fa-solid fa-bullseye"></i> Best Bowler
-    </h3>
-    <p>${team.bowler.name} - ${team.bowler.wickets} Wickets</p>
+//     <h3 class="section-title">
+//         <i class="fa-solid fa-bullseye"></i> Best Bowler
+//     </h3>
+//     <p>${team.bowler.name} - ${team.bowler.wickets} Wickets</p>
 
-    <h3 class="section-title">
-        <i class="fa-solid fa-images"></i> Gallery
-    </h3>
+//     <h3 class="section-title">
+//         <i class="fa-solid fa-images"></i> Gallery
+//     </h3>
 
-    <div class="gallery">
-        ${team.gallery.map(img=>`<img src="${img}">`).join("")}
-    </div>
+//     <div class="gallery">
+//         ${team.gallery.map(img=>`<img src="${img}">`).join("")}
+//     </div>
 
-    `;
-}
+//     `;
+// }
