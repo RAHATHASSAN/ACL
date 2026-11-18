@@ -287,127 +287,250 @@ nav ul li a:hover{
 
 <body>
 
-    <!-- NAVBAR -->
+  <!-- ================= NAVBAR ================= -->
+
 <nav>
+
     <a href="index.html" class="logo">
-    <img src="./Assets/acl logo/remove-photos-background-removed.png" alt="ACL Logo">
-    <h2>ACL League</h2>
-</a>
 
-    <div class="menu-toggle" id="menu-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
+        <img
+            src="./Assets/acl logo/remove-photos-background-removed.png"
+            alt="ACL Logo"
+        >
 
-    <!-- <ul id="nav-links">
-       <li><a href="registration.html">Register</a></li> 
-    <li><a href="#history">History</a></li>
-    <li><a href="#teams">Teams</a></li>
-    <li><a href="#players">Players</a></li> 
-    <li><a href="#season">Seasons</a></li>
-    <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#org">Organizers</a></li>
-</ul> -->
+        <h2>ACL League</h2>
+
+    </a>
+
 </nav>
+
+
+<!-- ================= REGISTRATION ================= -->
+
 <section class="register-section">
 
     <div class="register-card">
 
         <h2>🏏 ACL Player Registration</h2>
-        <p>Complete your registration to participate in ACL Season 07.</p>
 
-        <form id="registerForm">
+        <p>
+            Complete your registration to participate in ACL Season 07.
+        </p>
+
+
+        <!-- MESSAGE -->
+
+        <div id="message" class="message"></div>
+
+
+        <!-- FORM -->
+
+        <form
+            id="registerForm"
+            enctype="multipart/form-data"
+        >
+
+
+            <!-- PLAYER NAME -->
 
             <div class="input-group">
-                <label>Player Name</label>
-                <input type="text" required>
+
+                <label for="name">
+                    Player Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter player name"
+                    required
+                >
+
             </div>
 
-            <div class="input-group">
-                <label>Phone Number</label>
-                <input type="tel" required>
-            </div>
+
+            <!-- PHONE -->
 
             <div class="input-group">
-                <label>Email Address</label>
-                <input type="email" required>
+
+                <label for="phone">
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="01XXXXXXXXX"
+                    required
+                >
+
             </div>
+
+
+            <!-- EMAIL -->
+
+            <div class="input-group">
+
+                <label for="email">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="example@gmail.com"
+                    required
+                >
+
+            </div>
+
+
+            <!-- JERSEY -->
 
             <div class="double">
 
+
                 <div class="input-group">
-                    <label>Jersey Size</label>
 
-                    <select required>
+                    <label for="jersey_size">
+                        Jersey Size
+                    </label>
 
-                        <option value="">Select</option>
+                    <select
+                        id="jersey_size"
+                        name="jersey_size"
+                        required
+                    >
 
-                        <option>S</option>
-                        <option>M</option>
-                        <option>L</option>
-                        <option>XL</option>
-                        <option>XXL</option>
+                        <option value="">
+                            Select Size
+                        </option>
+
+                        <option value="S">S</option>
+
+                        <option value="M">M</option>
+
+                        <option value="L">L</option>
+
+                        <option value="XL">XL</option>
+
+                        <option value="XXL">XXL</option>
+                        <option value="3XL">3XL</option>
 
                     </select>
 
                 </div>
 
+
                 <div class="input-group">
 
-                    <label>Jersey Number</label>
+                    <label for="jersey_number">
+                        Jersey Number
+                    </label>
 
-                    <input type="number" min="1" max="999" required>
+                    <input
+                        type="number"
+                        id="jersey_number"
+                        name="jersey_number"
+                        min="1"
+                        max="999"
+                        placeholder="e.g. 10"
+                        required
+                    >
 
                 </div>
 
+
             </div>
+
+
+            <!-- PLAYER IMAGE -->
 
             <div class="input-group">
 
-                <label>Player Image</label>
+                <label for="player_image">
+                    Player Image
+                </label>
 
-                <input type="file" accept="image/*" required>
+                <input
+                    type="file"
+                    id="player_image"
+                    name="player_image"
+                    accept="image/jpeg,image/png,image/webp"
+                    required
+                >
 
             </div>
 
+
             <hr>
 
-            <h3>💳 Payment Method</h3>
+
+            <!-- PAYMENT -->
+
+            <h3>
+                💳 Payment Method
+            </h3>
+
 
             <div class="payment-options">
 
+
                 <label>
 
-                    <input type="radio" name="payment" value="bkash">
+                    <input
+                        type="radio"
+                        name="payment_method"
+                        value="bkash"
+                    >
 
                     bKash
 
                 </label>
 
+
                 <label>
 
-                    <input type="radio" name="payment" value="nagad">
+                    <input
+                        type="radio"
+                        name="payment_method"
+                        value="nagad"
+                    >
 
                     Nagad
 
                 </label>
 
+
                 <label>
 
-                    <input type="radio" name="payment" value="offline">
+                    <input
+                        type="radio"
+                        name="payment_method"
+                        value="offline"
+                    >
 
                     Offline Pay
 
                 </label>
 
+
             </div>
+
+
+            <!-- ONLINE PAYMENT -->
 
             <div id="onlinePayment">
 
+
                 <div class="payment-box">
 
-                    <h4>Send Registration Fee</h4>
+                    <h4>
+                        Send Registration Fee
+                    </h4>
 
                     <p>
                         <b>bKash:</b> 017XXXXXXXX
@@ -419,37 +542,76 @@ nav ul li a:hover{
 
                 </div>
 
-                <div class="input-group">
 
-                    <label>Payment Number</label>
-
-                    <input type="text" id="payNumber">
-
-                </div>
+                <!-- PAYMENT NUMBER -->
 
                 <div class="input-group">
 
-                    <label>Transaction ID</label>
+                    <label for="payment_number">
+                        Payment Number
+                    </label>
 
-                    <input type="text" id="trx">
+                    <input
+                        type="text"
+                        id="payment_number"
+                        name="payment_number"
+                        placeholder=" যে নম্বর থেকে টাকা পাঠিয়েছেন "
+                    >
 
                 </div>
+
+
+                <!-- TRANSACTION ID -->
 
                 <div class="input-group">
 
-                    <label>Payment Screenshot</label>
+                    <label for="transaction_id">
+                        Transaction ID
+                    </label>
 
-                    <input type="file" id="paymentImage" accept="image/*">
+                    <input
+                        type="text"
+                        id="transaction_id"
+                        name="transaction_id"
+                        placeholder="Enter Transaction ID"
+                    >
 
                 </div>
+
+
+                <!-- PAYMENT SCREENSHOT -->
+
+                <div class="input-group">
+
+                    <label for="payment_screenshot">
+                        Payment Screenshot
+                    </label>
+
+                    <input
+                        type="file"
+                        id="payment_screenshot"
+                        name="payment_screenshot"
+                        accept="image/jpeg,image/png,image/webp"
+                    >
+
+                </div>
+
 
             </div>
 
-            <button type="submit" class="submit-btn">
+
+            <!-- SUBMIT -->
+
+            <button
+                type="submit"
+                class="submit-btn"
+                id="submitBtn"
+            >
 
                 Register Player
 
             </button>
+
 
         </form>
 
@@ -457,57 +619,195 @@ nav ul li a:hover{
 
 </section>
 
-<!-- JS --><script>
 
-const paymentRadios=document.querySelectorAll("input[name='payment']");
+<script>
 
-const paymentDiv=document.getElementById("onlinePayment");
 
-const payNumber=document.getElementById("payNumber");
+/* ==========================================
+   PAYMENT METHOD
+========================================== */
 
-const trx=document.getElementById("trx");
+const paymentRadios =
+    document.querySelectorAll(
+        "input[name='payment_method']"
+    );
 
-const paymentImage=document.getElementById("paymentImage");
 
-paymentRadios.forEach(radio=>{
+const paymentDiv =
+    document.getElementById("onlinePayment");
 
-radio.addEventListener("change",()=>{
 
-if(radio.value=="bkash" || radio.value=="nagad"){
+const paymentNumber =
+    document.getElementById("payment_number");
 
-paymentDiv.style.display="block";
 
-payNumber.required=true;
+const transactionId =
+    document.getElementById("transaction_id");
 
-trx.required=true;
 
-paymentImage.required=true;
+const paymentScreenshot =
+    document.getElementById("payment_screenshot");
 
-}else{
 
-paymentDiv.style.display="none";
+paymentRadios.forEach(radio => {
 
-payNumber.required=false;
+    radio.addEventListener("change", function(){
 
-trx.required=false;
+        if(
+            this.value === "bkash" ||
+            this.value === "nagad"
+        ){
 
-paymentImage.required=false;
+            paymentDiv.style.display = "block";
 
-}
+            paymentNumber.required = true;
+
+            transactionId.required = true;
+
+            paymentScreenshot.required = true;
+
+        }
+
+        else{
+
+            paymentDiv.style.display = "none";
+
+            paymentNumber.required = false;
+
+            transactionId.required = false;
+
+            paymentScreenshot.required = false;
+
+        }
+
+    });
 
 });
 
+
+/* ==========================================
+   FORM SUBMIT
+========================================== */
+
+const form =
+    document.getElementById("registerForm");
+
+
+const message =
+    document.getElementById("message");
+
+
+const submitBtn =
+    document.getElementById("submitBtn");
+
+
+form.addEventListener("submit", async function(e){
+
+    e.preventDefault();
+
+
+    message.className = "message";
+
+    message.innerHTML = "";
+
+
+    submitBtn.disabled = true;
+
+    submitBtn.innerText = "Submitting...";
+
+
+    const formData =
+        new FormData(form);
+
+
+    try{
+
+
+        /*
+        ==========================================
+        IMPORTANT
+
+        এখানে তোমার PHP API URL বসবে।
+
+        এখন temporarily এই URL রাখা হলো।
+
+        পরে InfinityFree hosting করার পর
+        তোমার actual API URL বসাবো।
+        ==========================================
+        */
+
+        const response = await fetch(
+            // "https://YOUR-DOMAIN.infinityfreeapp.com/api/register.php",
+            // "http://localhost/acl_admin/api/register.php",
+            // "http://127.0.0.1/acl_admin/api/register.php",
+            // "http://localhost/acl_admin/api/register.php",
+            "http://localhost/acl_admin/api/register.php",
+            {
+                method:"POST",
+                body:formData
+            }
+        );
+
+
+        const data =
+            await response.json();
+
+
+        if(data.success){
+
+            message.className =
+                "message success";
+
+            message.innerHTML =
+                "✅ Registration submitted successfully!";
+
+
+            form.reset();
+
+            paymentDiv.style.display = "none";
+
+        }
+
+        else{
+
+            message.className =
+                "message error";
+
+            message.innerHTML =
+                "❌ " +
+                (data.message ||
+                "Registration failed.");
+
+        }
+
+
+    }
+
+    catch(error){
+
+        console.error(error);
+
+
+        message.className =
+            "message error";
+
+        message.innerHTML =
+            "❌ Server connection failed. Please try again.";
+
+    }
+
+
+    submitBtn.disabled = false;
+
+    submitBtn.innerText =
+        "Register Player";
+
 });
 
-document.getElementById("registerForm").addEventListener("submit",function(e){
-
-e.preventDefault();
-
-alert("Registration Submitted Successfully ✅");
-
-});
 
 </script>
 
+
 </body>
+
 </html>

@@ -964,6 +964,227 @@ font-size:28px;
     transform:translateY(-5px);
     background:#16a34a;
 }
+
+/* =====================================
+   DYNAMIC PLAYER CARDS
+===================================== */
+
+.players {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.player-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 18px;
+    padding: 25px 18px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.player-card:hover {
+    transform: translateY(-8px);
+    border-color: #22c55e;
+    box-shadow: 0 10px 30px rgba(34,197,94,0.12);
+}
+
+.player-image {
+    width: 115px;
+    height: 115px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #22c55e;
+    margin-bottom: 15px;
+}
+
+.player-card h3 {
+    color: #22c55e;
+    margin-bottom: 12px;
+}
+
+.player-card p {
+    color: #cbd5e1;
+    margin: 7px 0;
+    font-size: 14px;
+}
+
+.player-stats {
+    display: flex;
+    justify-content: space-around;
+    gap: 8px;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #334155;
+}
+
+.player-stats div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.player-stats strong {
+    color: #22c55e;
+    font-size: 19px;
+}
+
+.player-stats span {
+    color: #94a3b8;
+    font-size: 11px;
+}
+
+.no-players {
+    color: #cbd5e1;
+    text-align: center;
+    grid-column: 1 / -1;
+}
+
+/* SEASON HISTORY SECTION */
+
+#season {
+    padding: 70px 8%;
+    background: #0f172a;
+    color: white;
+}
+
+#season h2 {
+    text-align: center;
+    color: #22c55e;
+    font-size: 32px;
+    margin-bottom: 35px;
+}
+
+.seasons-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 22px;
+}
+
+.season-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 15px;
+    padding: 25px;
+    transition: 0.3s;
+}
+
+.season-card:hover {
+    transform: translateY(-5px);
+    border-color: #22c55e;
+}
+
+.season-card h3 {
+    color: #22c55e;
+    margin-bottom: 18px;
+}
+
+.season-card p {
+    margin: 12px 0;
+    color: #cbd5e1;
+}
+
+.no-seasons {
+    text-align: center;
+    color: #94a3b8;
+}
+/* ORGANIZERS SECTION */
+
+#organizers {
+    padding: 70px 8%;
+    background: #0f172a;
+    color: white;
+}
+
+.organizer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.organizer-left {
+    text-align: center;
+}
+
+.organizer-left h2 {
+    color: #22c55e;
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+.organizer-left p {
+    color: #cbd5e1;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+#organizersContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+}
+
+.organizer-name {
+    padding: 14px 22px;
+    border-radius: 30px;
+    background: #1e293b;
+    border: 1px solid #334155;
+    color: white;
+}
+
+.organizer-right {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.organizer-media {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 14px;
+    border: 1px solid #334155;
+}
+
+.organizer-media img,
+.organizer-media video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.organizer-media.video {
+    grid-column: 1 / -1;
+    height: 250px;
+    border: 2px solid #22c55e;
+}
+
+.organizer-media.video video {
+    object-fit: contain;
+    background: #020617;
+}
+
+@media(max-width: 800px) {
+    .organizer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 500px) {
+    .organizer-right {
+        grid-template-columns: 1fr;
+    }
+
+    .organizer-media.video {
+        grid-column: auto;
+    }
+}
+
+
 /* TEAM PROFILE MODAL */
 
 /* .team-profile{

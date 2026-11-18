@@ -97,7 +97,7 @@
     <p> আলহামদুলিল্লাহ, আপনাদের ভালোবাসা, সহযোগিতা ও দোয়ায় আমাদের এই আয়োজন প্রতিনিয়ত আরও সমৃদ্ধ হচ্ছে। ইনশাআল্লাহ, ভবিষ্যতে আমরা আরও বড় পরিসরে, আরও সুন্দর ও আকর্ষণীয় আয়োজনের মাধ্যমে সবার জন্য একটি স্মরণীয় অভিজ্ঞতা উপহার দিতে প্রতিশ্রুতিবদ্ধ। </p> <p> <strong> আপনাদের ভালোবাসা, সমর্থন ও দোয়াই আমাদের এগিয়ে যাওয়ার অনুপ্রেরণা।<br> ধন্যবাদ। </strong> </p>
 </section>
 <!-- TEAMS -->
-<section id="teams">
+<!-- <section id="teams">
     <h2>Our Teams</h2>
     <div class="teams">
 
@@ -142,6 +142,19 @@
         </div>
 
     </div>
+</section> -->
+<!-- TEAMS -->
+
+<section id="teams">
+
+    <h2>Our Teams</h2>
+
+    <div class="teams" id="teamsContainer">
+
+        <p>Loading teams...</p>
+
+    </div>
+
 </section>
 
 
@@ -150,12 +163,13 @@
     <h2>Player Details</h2>
 
     <div class="players" id="playersContainer">
+        Loading players...
         <!-- JS দিয়ে auto generate হবে -->
     </div>
 </section>
 
 <!-- SEASON -->
-<section id="season">
+<!-- <section id="season">
     <h2>Season Results</h2>
 
     <table>
@@ -202,90 +216,97 @@
         </tr>
 
     </table>
+</section> -->
+<!-- <section id="season">
+    <h2>Season Results</h2>
+
+    <div class="season-table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Season</th>
+                    <th>Champion</th>
+                    <th>Runner Up</th>
+                </tr>
+            </thead>
+
+            <tbody id="seasonContainer">
+                <tr>
+                    <td colspan="3">
+                        Loading season results...
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section> -->
+
+<!-- SEASON HISTORY -->
+
+<section id="season">
+
+    <h2>🏆 Season History</h2>
+
+    <div class="seasons-container" id="seasonsContainer">
+
+        <p>Loading season history...</p>
+
+    </div>
+
 </section>
 
+
 <!-- GALLERY -->
-<section id="gallery">
+<!-- <section id="gallery">
     <h2>Gallery</h2>
     <p>Match moments & team photos coming soon...</p>
+</section> -->
+<section id="gallery">
+
+    <h2>Gallery</h2>
+
+    <p>Match moments & team photos</p>
+
+    <div class="gallery-grid" id="galleryContainer">
+
+        <div class="loading">
+            Loading gallery...
+        </div>
+
+    </div>
+
 </section>
 
 <!-- ORGANIZERS -->
 <!-- ================= ORGANIZERS ================= -->
-<section id="org" class="organizers">
+<!-- ORGANIZERS SECTION -->
 
-    <h2>ACL Organizing Committee</h2>
+<section id="organizers">
 
-    <p class="org-subtitle">
-        Behind every successful season of the Ansar Camp Cricket League stands a dedicated team of organizers
-        who work tirelessly to make every tournament memorable.
-    </p>
+    <div class="organizer-content">
 
-    <div class="org-container">
+        <div class="organizer-left">
 
-        <!-- LEFT -->
-        <div class="org-left">
-
-            <h3>Our Organizers</h3>
+            <h2>Our Organizers</h2>
 
             <p>
-                The ACL Organizing Committee is committed to planning, managing,
-                and successfully conducting every season with fairness, discipline,
+                The ACL Organizing Committee is committed to
+                planning, managing, and successfully conducting
+                every season with fairness, discipline,
                 teamwork, and passion for cricket.
             </p>
 
-            <div class="org-members">
-
-
-                                <span>Bappy</span>
-                <span>Ratul</span>
-                                <span>Shuvo</span>
-                <span>Saiful</span>
-                <span>Mithu</span>
-                                <span>Rana</span>
-                                                <span>Alamin</span>
-                <span>BP Rasel</span>
-                <span>Ibrahim</span>
-
-                                <span>Niloy</span>
-                <span>Nirzhor</span>
-                <span>Jahid</span>
-                <span>Rasel</span>
-                <span>Asif</span>
-                <span>Rahat</span>
-
-                                <span>Roni</span>
-
-                <span>Shajol</span>
-                <span>Arman</span>
-
-
-
-
-                <!-- <span>Shuvo</span>
-                <span>Saiful</span>
-                <span>Mithu</span> -->
-
-
+            <div id="organizersContainer">
+                Loading organizers...
             </div>
 
         </div>
 
-        <!-- RIGHT -->
-        <div class="org-right">
+        <div class="organizer-right">
 
-            <div class="org-gallery">
-
-                <img src="./Assets/organizer/1.jpg">
-                <img src="./Assets/organizer/2.jpg">
-                <img src="./Assets/organizer/3.jpg">
-                <img src="./Assets/organizer/4.jpg">
-
+            <div id="organizerMediaContainer">
+                Loading photos and videos...
             </div>
-
-            <video controls poster="./Assets/organizer/video-cover.jpg">
-                <source src="./Assets/organizer/organizer.mp4" type="video/mp4">
-            </video>
 
         </div>
 
