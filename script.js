@@ -11,7 +11,8 @@
 
 // const ADMIN_BASE_URL = "http://localhost/acl_admin/";
 // const ADMIN_BASE_URL = "https://acl-admin.infinityfreeapp.com/";
-const ADMIN_BASE_URL = "https://acl-admin.freedev.app/";
+// const ADMIN_BASE_URL = "https://acl-admin.freedev.app/";
+const ADMIN_BASE_URL = "https://acl-admin.freedev.app/acl_admin/";
 
 const TEAM_API = ADMIN_BASE_URL + "api/teams-api.php";
 const TEAM_IMAGE_BASE = ADMIN_BASE_URL;
